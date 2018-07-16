@@ -1,0 +1,20 @@
+{
+  "name": "SmartRemote",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "compression-webpack-plugin": "^1.1.11",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build && rm -rf ../data/www && cp -r build ../data/www",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-app-rewired": "^1.5.2"
+  }
+}
