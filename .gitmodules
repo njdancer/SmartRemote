@@ -13,3 +13,6 @@
 [submodule "lib/ESPAsyncTCP"]
 	path = lib/ESPAsyncTCP
 	url = https://github.com/me-no-dev/ESPAsyncTCP.git
+[submodule "lib/ArduinoJson"]
+	path = lib/ArduinoJson
+	url = https://github.com/bblanchon/ArduinoJson.git

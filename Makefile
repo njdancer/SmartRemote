@@ -3,7 +3,7 @@ BOARD = nodemcuv2
 
 ESP_ROOT=esp8266
 
-LIBS = ./lib/IRremoteESP8266/src ./lib/ESPAsyncTCP/src ./lib/ESPAsyncWebServer/src ./esp8266/libraries/
+LIBS = ./lib/IRremoteESP8266/src ./lib/ESPAsyncTCP/src ./lib/ESPAsyncWebServer/src ./esp8266/libraries/ ./lib/ArduinoJson/src
 EXCLUDE_DIRS = .//interface .//lib .//esp8266
 
 INTERFACE_DIR=interface
