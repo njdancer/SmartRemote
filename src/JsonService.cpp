@@ -14,6 +14,8 @@ JsonService::JsonService(AsyncWebServer* server,
                                                                           std::placeholders::_2)) {}
 
 void JsonService::begin() {
+  readFromSPIFFS();
+
   // configure read handler
   _server->on(_serviceEndpoint.c_str(), HTTP_GET, std::bind(&JsonService::handleReadRequest, this, std::placeholders::_1));
 
