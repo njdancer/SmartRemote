@@ -2,17 +2,20 @@
 #define ACService_h
 
 #include <ESPAsyncWebServer.h>
+#include <ir_DeLonghi.h>
 #include "JsonService.h"
 
 
 #define AC_SERVICE_FILE_PATH "/config/acSettings.json"
 #define AC_SERVICE_ENDPOINT "/api/ac"
 
-class ACService : public JsonService {
+class DeLonghiACService : public JsonService {
 
 public:
 
-  ACService(AsyncWebServer* server);
+  DeLonghiACService(AsyncWebServer* server, IRDeLonghiAC* deLonghiIR);
+
+  void sendIfNeeded();
 
 private:
 
@@ -21,7 +24,10 @@ private:
 
   void applyServiceDefaults() override;
 
-  bool _power;
+  void onUpdate() override;
+
+  IRDeLonghiAC* _deLonghiIR;
+  bool _dirty = false;
 
 };
 

@@ -1,16 +1,19 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
 #include <ESPAsyncWebServer.h>
-#include "ACService.h"
+#include <ir_DeLonghi.h>
+#include "DeLonghiACService.h"
 
 // SKETCH BEGIN
 AsyncWebServer server(80);
 
-ACService acService(&server);
+IRDeLonghiAC deLonghiIR(4);
+
+DeLonghiACService acService(&server, &deLonghiIR);
 
 const char* ssid = "dancer-priv";
 const char* password = "maundrell71";
-const char * hostName = "remote";
+const char* hostName = "remote";
 
 void setup(){
   Serial.begin(115200);
@@ -34,9 +37,10 @@ void setup(){
   }
 
   server.begin();
+  deLonghiIR.begin();
   acService.begin();
 }
 
 void loop(){
-
+  acService.sendIfNeeded();
 }

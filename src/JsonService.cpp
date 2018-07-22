@@ -40,7 +40,7 @@ void JsonService::handleUpdateRequest(AsyncWebServerRequest *request, JsonVarian
     storeJsonObject(rootObject);
     writeToSPIFFS();
 
-    AsyncJsonResponse * response = new AsyncJsonResponse();
+    AsyncJsonCallbackResponse* response = new AsyncJsonCallbackResponse([this] () {onUpdate();});
     populateJsonObject(response->getRoot());
     response->setLength();
     request->send(response);
@@ -49,6 +49,8 @@ void JsonService::handleUpdateRequest(AsyncWebServerRequest *request, JsonVarian
     request->send(400);
   }
 }
+
+void JsonService::onUpdate() {}
 
 void JsonService::readFromSPIFFS() {
   // Open target file from SPIFFS

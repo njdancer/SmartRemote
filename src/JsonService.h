@@ -6,6 +6,7 @@
 #include <ArduinoJson.h>
 #include <AsyncJson.h>
 #include "AsyncJsonWebHandler.h"
+#include "AsyncJsonCallbackResponse.h"
 
 #define MAX_FILE_SIZE 1024
 
@@ -15,7 +16,7 @@ public:
 
   JsonService(AsyncWebServer* server, String serviceEndpoint, String filePath);
 
-  void begin();
+  virtual void begin();
 
 private:
 
@@ -26,6 +27,8 @@ private:
   virtual void storeJsonObject(JsonObject& root) = 0;
 
   virtual void applyServiceDefaults();
+
+  virtual void onUpdate();
 
   void readFromSPIFFS();
   bool writeToSPIFFS();
