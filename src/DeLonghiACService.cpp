@@ -16,9 +16,9 @@ void DeLonghiACService::populateJsonObject(JsonObject& root) {
 }
 
 void DeLonghiACService::storeJsonObject(JsonObject& root) {
-  _deLonghiIR->setPower(root["power"]);
-  _deLonghiIR->setMode(root["mode"]);
-  _deLonghiIR->setTemp(root["temp"]);
+  if (root.containsKey("power")) { _deLonghiIR->setPower(root["power"]); }
+  if (root.containsKey("mode")) { _deLonghiIR->setMode(root["mode"]); }
+  if (root.containsKey("temp")) { _deLonghiIR->setTemp(root["temp"]); }
 
   _dirty = true;
 }
