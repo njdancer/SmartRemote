@@ -6,7 +6,7 @@
 #include <ArduinoJson.h>
 #include <AsyncJson.h>
 #include "AsyncJsonWebHandler.h"
-#include "AsyncJsonCallbackResponse.h"
+#include "AsyncApplicationJsonResponse.h"
 
 #define MAX_FILE_SIZE 1024
 
