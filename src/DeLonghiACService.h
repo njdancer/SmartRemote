@@ -24,8 +24,6 @@ private:
 
   void applyServiceDefaults() override;
 
-  void onUpdate() override;
-
   IRDeLonghiAC* _deLonghiIR;
   bool _dirty = false;
 

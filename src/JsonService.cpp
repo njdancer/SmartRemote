@@ -27,7 +27,7 @@ void JsonService::applyServiceDefaults() {}
 
 void JsonService::handleReadRequest(AsyncWebServerRequest *request) {
 
-  AsyncJsonResponse* response = new AsyncJsonResponse();
+  AsyncApplicationJsonResponse* response = new AsyncApplicationJsonResponse();
   populateJsonObject(response->getRoot());
   response->setLength();
   request->send(response);
@@ -42,7 +42,7 @@ void JsonService::handleUpdateRequest(AsyncWebServerRequest *request, JsonVarian
     storeJsonObject(rootObject);
     writeToSPIFFS();
 
-    AsyncJsonCallbackResponse* response = new AsyncJsonCallbackResponse([this] () {onUpdate();});
+    AsyncApplicationJsonResponse* response = new AsyncApplicationJsonResponse();
     populateJsonObject(response->getRoot());
     response->setLength();
     request->send(response);

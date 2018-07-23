@@ -19,14 +19,12 @@ void DeLonghiACService::storeJsonObject(JsonObject& root) {
   _deLonghiIR->setPower(root["power"]);
   _deLonghiIR->setMode(root["mode"]);
   _deLonghiIR->setTemp(root["temp"]);
+
+  _dirty = true;
 }
 
 void DeLonghiACService::applyServiceDefaults() {
   _deLonghiIR->setPower(false);
   _deLonghiIR->setMode(0);
   _deLonghiIR->setTemp(24);
-}
-
-void DeLonghiACService::onUpdate() {
-  _dirty = true;
 }
