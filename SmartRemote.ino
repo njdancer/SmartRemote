@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
+#include <FS.h>
 #include <ESPAsyncWebServer.h>
 #include <ir_DeLonghi.h>
 #include "DeLonghiACService.h"
@@ -36,6 +37,7 @@ void setup(){
     Serial.println("MDNS responder started");
   }
 
+  SPIFFS.begin();
   server.begin();
   deLonghiIR.begin();
   acService.begin();
