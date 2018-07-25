@@ -31,9 +31,14 @@
   font-size: 80px;
 }
 
+.TemperatureControl span {
+  margin: 0px 25px;
+}
+
 .TemperatureControl button {
+  font-size: 80px;
+  line-height: 10px;
   width: 100px;
   height: 100px;
-  margin: 0;
-  padding: 0;
+  padding-bottom: 20px;
 }
