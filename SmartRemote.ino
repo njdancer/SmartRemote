@@ -37,6 +37,8 @@ void setup(){
     Serial.println("MDNS responder started");
   }
 
+  server.serveStatic("/", SPIFFS, "/www/").setDefaultFile("index.html");
+
   SPIFFS.begin();
   server.begin();
   deLonghiIR.begin();
