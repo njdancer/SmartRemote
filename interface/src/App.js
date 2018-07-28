@@ -3,6 +3,8 @@ import { fetchAc, updateAc } from './api';
 import './App.css';
 import ModeSelector from './ModeSelector';
 import TemperatureControl from './TemperatureControl';
+import HeatButton from './HeatButton.js';
+import CoolButton from './CoolButton.js';
 
 
 const INDEX_MODE_MAP = {
@@ -65,6 +67,8 @@ class App extends Component {
       <div className="App">
         <ModeSelector selectedIndex={modeIndexFromData(this.state)} onClick={i => this.handleModeSelectorClick(i)}/>
         <TemperatureControl value={this.state.temp} onChange={temp => this.handleTemperatureChange(temp)}/>
+        <HeatButton />
+        <CoolButton />
       </div>
     );
   }
