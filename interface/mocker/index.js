@@ -9,10 +9,10 @@ const proxy = {
   'PATCH /api/ac': (req, res) => {
     // Sanitise temp and mode
     var mode = req.body.mode;
-    if (mode) mode = Math.max(0, Math.min(4, mode));
+    mode = mode ? Math.max(0, Math.min(4, mode)) : acState.mode;
 
     var temp = req.body.temp;
-    if (temp) temp = Math.max(16, Math.min(30, temp));
+    temp = temp ? Math.max(16, Math.min(30, temp)) : acState.temp;
 
     return res.json(Object.assign(acState, {
       power: req.body.power,
