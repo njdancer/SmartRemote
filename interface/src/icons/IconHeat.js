@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const canvasSize = 100;
 
@@ -9,13 +8,12 @@ function SunSpikes({count, length, roundness, thickness}) {
     spikes.push(<rect
       key={i}
       x={canvasSize / 2 - thickness / 2}
-      y="0"
       width={thickness}
       height={length}
       rx={roundness}
       ry={roundness}
       transform={[
-        `rotate(${(360 / count) * i}, ${canvasSize / 2}, ${canvasSize / 2})`,
+        `rotate(${(360 / count) * i} ${canvasSize / 2} ${canvasSize / 2})`,
         // `translate(${-thickness / 2} 0 )`,
       ]}/>
     )

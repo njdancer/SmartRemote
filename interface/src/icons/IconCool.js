@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const canvasSize = 100;
 
@@ -9,13 +8,12 @@ function Branches({count, roundness, thickness}) {
     branches.push(<rect
       key={i}
       x={canvasSize / 2 - thickness / 2}
-      y="0"
       width={thickness}
       height={canvasSize}
       rx={roundness}
       ry={roundness}
       transform={[
-        `rotate(${((360 / count) * i) + ((360 / count) / 4)}, ${canvasSize / 2}, ${canvasSize / 2})`,
+        `rotate(${((360 / count) * i) + ((360 / count) / 4)} ${canvasSize / 2} ${canvasSize / 2})`,
       ]}/>)
   }
 
@@ -25,7 +23,7 @@ function Branches({count, roundness, thickness}) {
 export default function IconHeat({className}) {
   return (
     <svg className={className} viewBox={`0 0 ${canvasSize} ${canvasSize}`}>
-      <Branches count="3" length="80" roundness="5" thickness="12"/>
+      <Branches count="3" roundness="5" thickness="12"/>
     </svg>
   )
 }
