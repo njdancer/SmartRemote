@@ -1,5 +1,6 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const rewireStyledComponents = require('react-app-rewire-styled-components');
 const apiMocker = require('webpack-api-mocker');
 
 const path = require('path');
@@ -7,6 +8,7 @@ const fs = require('fs');
 
 module.exports = {
   webpack: function(config, env) {
+    rewireStyledComponents(config);
 
     // Rename output files, we need their path's to be short, for SPIFFS
     config.output.filename = 'js/[name].js';
