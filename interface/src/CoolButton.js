@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
 import ModeButton from './ModeButton';
 import IconCool from './icons/IconCool.js';
 
