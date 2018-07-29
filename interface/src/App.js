@@ -5,6 +5,7 @@ import ModeSelector from './ModeSelector';
 import TemperatureControl from './TemperatureControl';
 import HeatButton from './HeatButton.js';
 import CoolButton from './CoolButton.js';
+import DryButton from './DryButton.js';
 
 
 const INDEX_MODE_MAP = {
@@ -69,6 +70,7 @@ class App extends Component {
         <TemperatureControl value={this.state.temp} onChange={temp => this.handleTemperatureChange(temp)}/>
         <HeatButton />
         <CoolButton />
+        <DryButton />
       </div>
     );
   }

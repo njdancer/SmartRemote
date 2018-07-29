@@ -20,6 +20,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "svg-partial-circle": "^1.0.0",
     "webpack-api-mocker": "^1.5.7"
   }
 }
