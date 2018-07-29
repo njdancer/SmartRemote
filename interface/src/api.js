@@ -1,4 +1,4 @@
-const API_ENDPOINT = "http://remote.local/api/ac";
+const API_ENDPOINT = "/api/ac";
 
 
 export function fetchAc() {
